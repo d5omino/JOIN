@@ -23,12 +23,36 @@ namespace JOIN.Controllers
         public IActionResult Index(string validemail)
         {
 
-            Registration ValidRegistration = new Registration(validemail);
+            //Registration ValidRegistration = new Registration(validemail);
 
 
 
 
-            return View(ValidRegistration);
+            return View();
+        }
+
+
+
+
+        public IActionResult Register(string validemail, string firstname, string lastname)
+        {
+
+            Registration registration = new Registration(validemail, firstname, lastname);
+
+
+            if (ModelState.IsValid)
+            {
+                _context.Add(registration);
+                _context.SaveChanges();
+                return RedirectToAction("Success");
+
+            }
+            else
+            {
+                return RedirectToAction("Error");
+            }
+
+
         }
 
         public IActionResult Error()
@@ -42,28 +66,6 @@ namespace JOIN.Controllers
 
             return View("success");
         }
-
-
-        public IActionResult Register(Registration ValidRegistration)
-        {
-
-
-            if (ModelState.IsValid)
-            {
-                _context.Add(ValidRegistration);
-                _context.SaveChanges();
-                return RedirectToAction("Success");
-
-            }
-            else
-            {
-                return RedirectToAction("Error");
-            }
-
-
-        }
-
-
 
         ////Properties
         //private readonly JoinDbContext _context;
