@@ -9,7 +9,7 @@
     @using (Html.BeginForm("Index", "Registrations", FormMethod.Post))
     {
         @Html.TextBoxFor(m => m.ValidEmail, new { placeholder = "Enter e-mail address here!", name = "ValidEmail", @class = "form-control" })
-        <input type="submit" value="Register" id="register-btn" />
+        <div id="buttonholder"><input type="submit" value="Register" id="register-btn" /></div>
     }
 </div>
 

@@ -1,10 +1,8 @@
 ﻿
 
 html{
-
-    
-    
     background:linear-gradient(rgb(255, 255, 255) 75%,#ffa500);
+    height:100vh;
     
     
 
@@ -13,18 +11,14 @@ html{
 
 body{
     background-color:transparent; 
-    min-height:100vh;
+    min-height:inherit;
 }
 
 #logo{
 
     
     height:75vh;
-    
-    
-    
-
-    
+    position:center;
 
 }
 
@@ -52,6 +46,7 @@ body{
     font-size-adjust:1;
     color:#0000EE;
     font-size:x-large;
+    text-align:center;
 
 
 }
@@ -60,14 +55,27 @@ body{
     font-family: 'Comic Sans MS';
     font-size-adjust: 1;
     color: #0000EE;
-    font-size:medium;
+    font-size: medium;
+    text-align: center;
 }
 
 #register-btn{
 
     position:relative;
-    left:1%;
+    margin-top:5px;
     
+
+}
+svg{
+    display:block;
+    margin:auto;
+    
+
+
+}
+#buttonholder{
+
+   text-align:center;
 
 }
 

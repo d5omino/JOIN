@@ -31,7 +31,11 @@ namespace JOIN.Controllers
             return View(ValidRegistration);
         }
 
+        public IActionResult Error()
+        {
 
+            return View();
+        }
 
 
 
