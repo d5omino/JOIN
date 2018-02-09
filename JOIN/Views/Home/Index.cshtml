@@ -3,15 +3,16 @@
 
 }
 
+<div id="ask">Want to join us when we're ready?</div>
+
+<div id="emailform">
+    @using (Html.BeginForm("Index", "Registrations", FormMethod.Post))
+    {
+        @Html.TextBoxFor(m => m.ValidEmail, new { placeholder = "Enter e-mail address here!", name = "ValidEmail", @class = "form-control" })
+        <input type="submit" value="Register" id="register-btn" />
+    }
+</div>
+
+<div id="notify">Sign up and we'll let you know!</div>
 
 
-@using(Html.BeginForm("Index","Registrations",FormMethod.Post))
-{
-
-
-    @Html.TextBoxFor(m => m.ValidEmail,new { @class = "form-control",placeholder = "Enter e-mail address here!",name = "ValidEmail" })
-
-
-    <input type="submit" value="Register" />
-
-}

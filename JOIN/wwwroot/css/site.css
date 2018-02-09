@@ -1,6 +1,73 @@
-﻿html , body {
+﻿
 
-    min-height:100vh;
-    min-width:100vw;
+html{
+
+    
+    
+    background:linear-gradient(rgb(255, 255, 255) 75%,#ffa500);
+    
+    
 
 }
+
+
+body{
+    background-color:transparent; 
+    min-height:100vh;
+}
+
+#logo{
+
+    
+    height:75vh;
+    
+    
+    
+
+    
+
+}
+
+#first {
+    position: relative;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+#last {
+    position: relative;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+#email {
+    position: relative;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+#ask{
+
+    font-family:'Comic Sans MS';
+    font-size-adjust:1;
+    color:#0000EE;
+    font-size:x-large;
+
+
+}
+
+#notify {
+    font-family: 'Comic Sans MS';
+    font-size-adjust: 1;
+    color: #0000EE;
+    font-size:medium;
+}
+
+#register-btn{
+
+    position:relative;
+    left:1%;
+    
+
+}
+

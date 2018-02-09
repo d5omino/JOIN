@@ -10,9 +10,9 @@
 @using (Html.BeginForm("Register", "Registrations", FormMethod.Post))
 {
 
-    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", placeholder = "Enter your First name here!", name = "FirstName" })
-    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", placeholder = "Enter your Last name here!", name = "LastName" })
-    @Html.TextBoxFor(m => m.ValidEmail, new { @class = "form-control", placeholder = "Enter e-mail address here!", name = "ValidEmail" })
-    <input type="submit" name="Submit" value="Join" />
+    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", placeholder = "Enter your First name here!", name = "FirstName", id = "first" })
+    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", placeholder = "Enter your Last name here!", name = "LastName", id = "last" })
+    @Html.TextBoxFor(m => m.ValidEmail, new { @class = "form-control", placeholder = "Enter e-mail address here!", name = "ValidEmail", id = "email" })
+    <input type="submit" value="Register" id="register-btn" />
 }
 
