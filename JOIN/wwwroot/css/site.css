@@ -78,4 +78,21 @@ svg{
    text-align:center;
 
 }
+img {
+    height:25%;
+    width:35%;
+}
+.error{
+
+    display:block;
+    text-align:center;
+    margin:25%;
+    margin-top:0;
+
+}
+
+#successdiv{
+    text-align:center;
+
+}
 

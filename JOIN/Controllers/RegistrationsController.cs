@@ -34,9 +34,14 @@ namespace JOIN.Controllers
         public IActionResult Error()
         {
 
-            return View();
+            return View("error");
         }
 
+        public IActionResult Success()
+        {
+
+            return View("success");
+        }
 
 
         public IActionResult Register(Registration ValidRegistration)
@@ -47,12 +52,12 @@ namespace JOIN.Controllers
             {
                 _context.Add(ValidRegistration);
                 _context.SaveChanges();
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Success");
 
             }
             else
             {
-                return Redirect("http://cucklist.com");
+                return RedirectToAction("Error");
             }
 
 
