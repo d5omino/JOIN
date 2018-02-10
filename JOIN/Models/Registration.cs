@@ -15,6 +15,7 @@ namespace JOIN.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         [EmailAddress]
+        [DataType(DataType.EmailAddress)]
         [Required]
         public string ValidEmail { get; set; }
         public string Owner { get; set; }
@@ -24,6 +25,10 @@ namespace JOIN.Models
 
         public Registration(string validemail, string firstname, string lastname)
         {
+            ValidEmail = validemail;
+            FirstName = firstname;
+            LastName = lastname;
+
 
         }
 

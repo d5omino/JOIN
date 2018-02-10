@@ -23,11 +23,7 @@ namespace JOIN.Controllers
         public IActionResult Index(string validemail)
         {
 
-            //Registration ValidRegistration = new Registration(validemail);
-
-
-
-
+            
             return View();
         }
 
@@ -37,8 +33,10 @@ namespace JOIN.Controllers
         public IActionResult Register(string validemail, string firstname, string lastname)
         {
 
+
             Registration registration = new Registration(validemail, firstname, lastname);
 
+            
 
             if (ModelState.IsValid)
             {
