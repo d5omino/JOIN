@@ -1,7 +1,7 @@
 ﻿
 
 html{
-    background:linear-gradient(rgb(255, 255, 255) 75%,#ffa500);
+   
     height:100vh;
     
     
@@ -42,20 +42,20 @@ body{
 
 #ask{
 
-    font-family:'Comic Sans MS';
+    font-family:'Old English Text MT';
     font-size-adjust:1;
-    color:#0000EE;
-    font-size:x-large;
+    color:#000000;
+    font-size:xx-large;
     text-align:center;
 
 
 }
 
 #notify {
-    font-family: 'Comic Sans MS';
+    font-family:'Old English Text MT';
     font-size-adjust: 1;
-    color: #0000EE;
-    font-size: medium;
+    color: #000000;
+    font-size: large;
     text-align: center;
 }
 
