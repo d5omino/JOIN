@@ -1,4 +1,6 @@
 ﻿
+
+
 * {
     box-sizing: border-box;
 }
@@ -99,3 +101,9 @@ img {
 
 }
 
+
+li{
+    display:inline;
+    font-family:'Old English Text MT';
+    font-size:large;
+}
