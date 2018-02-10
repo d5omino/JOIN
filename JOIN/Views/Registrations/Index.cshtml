@@ -14,5 +14,6 @@
     @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", placeholder = "Enter your Last name here!", name = "LastName", id = "last" })
     @Html.TextBoxFor(m => m.ValidEmail, new { @class = "form-control", placeholder = "Enter e-mail address here!", name = "ValidEmail", id = "email" })
     <input type="submit" value="Register" id="register-btn" />
+    <span asp-validation-for="ValidEmail"></span>
 }
 
