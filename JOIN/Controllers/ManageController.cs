@@ -1,18 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Encodings.Web;
-using System.Threading.Tasks;
+﻿using JOIN.Models;
+using JOIN.Models.ManageViewModels;
+using JOIN.Services;
+
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using JOIN.Models;
-using JOIN.Models.ManageViewModels;
-using JOIN.Services;
+
+using System;
+using System.Linq;
+using System.Text;
+using System.Text.Encodings.Web;
+using System.Threading.Tasks;
 
 namespace JOIN.Controllers
 {
@@ -429,10 +429,7 @@ namespace JOIN.Controllers
         }
 
         [HttpGet]
-        public IActionResult ResetAuthenticatorWarning()
-        {
-            return View(nameof(ResetAuthenticator));
-        }
+        public IActionResult ResetAuthenticatorWarning() => View(nameof(ResetAuthenticator));
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -518,14 +515,11 @@ namespace JOIN.Controllers
             return result.ToString().ToLowerInvariant();
         }
 
-        private string GenerateQrCodeUri(string email, string unformattedKey)
-        {
-            return string.Format(
+        private string GenerateQrCodeUri(string email, string unformattedKey) => string.Format(
                 AuthenticatorUriFormat,
                 _urlEncoder.Encode("JOIN"),
                 _urlEncoder.Encode(email),
                 unformattedKey);
-        }
 
         private async Task LoadSharedKeyAndQrCodeUriAsync(ApplicationUser user, EnableAuthenticatorViewModel model)
         {

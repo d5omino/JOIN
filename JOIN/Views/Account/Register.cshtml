@@ -4,33 +4,60 @@
 }
 
 
-<div id="ask"><h1>Want to join us when we're up and running?</h1> </div>
 
 
 
-<div class="container-fluid" id="form-holder">
-    <form class="jumbotron jumbotron-fluid" asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
-        <div id="notify"><h4>Sign-Up below and we'll shoot you and email when we're up!</h4> </div>
+<div class="row" id="row2">
+    <div class=" col-lg-3 ">
+        <div id="ask"><h1>Want to join us when we're up and running?</h1> </div>
+        <form class="jumbotron jumbotron-fluid" asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
+            <div id="notify"><h4>Sign-Up below and we'll shoot you and email when we're up!</h4> </div>
+            <hr />
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group form-group-lg" id="email">
+
+                <input asp-for="Email" class="form-control" placeholder="Email Address" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group form-group-lg" id="password">
+
+                <input asp-for="Password" class="form-control" placeholder="Password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group form-group-lg" id="confirmpassword">
+
+                <input asp-for="ConfirmPassword" class="form-control" placeholder="Confirm Password" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div id="buttonholder"><button type="submit" class="btn btn-default" id="register-btn">Register</button></div>
+        </form>
+
+    </div>
+    <div class="col-lg-3 col-sm-offset-1" id="forwho">
+
+
+        <div><p id="welcome">Welcome Bulls, Hotwives and of course...</p></div>
         <hr />
-        <div asp-validation-summary="All" class="text-danger"></div>
-        <div class="form-group form-group-lg" id="email">
+        <div><p id="cuckolds">Cuckolds!</p></div>
 
-            <input asp-for="Email" class="form-control" placeholder="Email Address" />
-            <span asp-validation-for="Email" class="text-danger"></span>
-        </div>
-        <div class="form-group form-group-lg" id="password">
+    </div>
+    <div class="col-lg-3 col-lg-offset-1" id="links">
 
-            <input asp-for="Password" class="form-control" placeholder="Password" />
-            <span asp-validation-for="Password" class="text-danger"></span>
-        </div>
-        <div class="form-group form-group-lg" id="confirmpassword">
+        <a asp-controller="Videos" asp-action="Index">Videos</a>
+        <hr />
+        <a asp-controller="Forums" asp-action="Index">Forums</a>
+        <hr />
+        <a asp-controller="Blogs" asp-action="Index">Blogs</a>
+        <hr />
 
-            <input asp-for="ConfirmPassword" class="form-control" placeholder="Confirm Password" />
-            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
-        </div>
-        <div id="buttonholder"><button type="submit" class="btn btn-default" id="register-btn">Register</button></div>
-    </form>
+
+
+    </div>
 </div>
+
+
+
+
 
 
 

@@ -44,7 +44,7 @@ body{
 #notify {
     font-family:'Old English Text MT';
     color: #000000;
-    font-size: large;
+    font-size: x-large;
     text-align: center;
 }
 #register-btn{
@@ -81,3 +81,22 @@ li{
     
 
 }
+p#welcome{
+    text-align:center;
+    font-size:xx-large;
+    font-family:'Old English Text MT';
+
+}
+#links {
+    text-align: center;
+    font-size: large;
+    font-family: 'Old English Text MT';
+}
+#cuckolds{
+    text-align:center;
+    font-family:'Old English Text MT';
+    font-size:50px;
+
+}
+
+

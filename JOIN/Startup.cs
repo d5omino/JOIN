@@ -21,10 +21,7 @@ namespace JOIN
         public string DevDbString;
 
 
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
+        public Startup(IConfiguration configuration) => Configuration = configuration;
 
         public IConfiguration Configuration { get; }
 
@@ -40,12 +37,25 @@ namespace JOIN
             {
                 services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(DevDbString));
+                services.AddDbContext<VideoDbContext>(options =>
+                options.UseSqlServer(DevDbString));
+                services.AddDbContext<BlogsContext>(options =>
+                options.UseSqlServer(DevDbString));
+                services.AddDbContext<ForumsDbContext>(options =>
+                options.UseSqlServer(DevDbString));
+
 
 
             }
             else
             {
                 services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(ProdDbString));
+                services.AddDbContext<VideoDbContext>(options =>
+                options.UseSqlServer(ProdDbString));
+                services.AddDbContext<ForumsDbContext>(options =>
+                options.UseSqlServer(ProdDbString));
+                services.AddDbContext<BlogsContext>(options =>
                 options.UseSqlServer(ProdDbString));
 
             }
@@ -58,6 +68,12 @@ namespace JOIN
             services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddMvc();
+
+            services.AddDbContext<BlogsContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("BlogsContext")));
+
+            services.AddDbContext<ForumsDbContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("ForumsDbContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

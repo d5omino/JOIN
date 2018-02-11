@@ -4,10 +4,7 @@ namespace JOIN.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
-        {
-            return Redirect("/account/register");
-        }
+        public IActionResult Index() => Redirect("/account/register");
 
 
     }

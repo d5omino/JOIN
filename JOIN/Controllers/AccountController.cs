@@ -197,10 +197,7 @@ namespace JOIN.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public IActionResult Lockout()
-        {
-            return View();
-        }
+        public IActionResult Lockout() => View();
 
 
 
@@ -249,7 +246,7 @@ namespace JOIN.Controllers
         {
             await _signInManager.SignOutAsync();
             _logger.LogInformation("User logged out.");
-            return RedirectToAction(nameof(HomeController.Index), "Home");
+            return RedirectToAction(nameof(AccountController.Register), "Home");
         }
 
         [HttpPost]
@@ -337,7 +334,7 @@ namespace JOIN.Controllers
         {
             if (userId == null || code == null)
             {
-                return RedirectToAction(nameof(HomeController.Index), "Home");
+                return RedirectToAction(nameof(AccountController.Register), "Home");
             }
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
@@ -350,10 +347,7 @@ namespace JOIN.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public IActionResult ForgotPassword()
-        {
-            return View();
-        }
+        public IActionResult ForgotPassword() => View();
 
         [HttpPost]
         [AllowAnonymous]
@@ -384,10 +378,7 @@ namespace JOIN.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public IActionResult ForgotPasswordConfirmation()
-        {
-            return View();
-        }
+        public IActionResult ForgotPasswordConfirmation() => View();
 
         [HttpGet]
         [AllowAnonymous]
@@ -427,17 +418,11 @@ namespace JOIN.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public IActionResult ResetPasswordConfirmation()
-        {
-            return View();
-        }
+        public IActionResult ResetPasswordConfirmation() => View();
 
 
         [HttpGet]
-        public IActionResult AccessDenied()
-        {
-            return View();
-        }
+        public IActionResult AccessDenied() => View();
 
         #region Helpers
 
@@ -457,7 +442,7 @@ namespace JOIN.Controllers
             }
             else
             {
-                return RedirectToAction(nameof(HomeController.Index), "Home");
+                return RedirectToAction(nameof(AccountController.Register), "Home");
             }
         }
 
