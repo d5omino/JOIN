@@ -13,7 +13,6 @@ html{
 
 }
 
-
 body{
     background-color:transparent; 
     min-height:inherit;
@@ -22,33 +21,32 @@ body{
 #logo{
 
     
-    height:75vh;
+    height:55vh;
     position:center;
 
 }
 
-#first {
-    position: relative;
-    margin-bottom: 5px;
-    margin-top: 5px;
+#password, #email, #confirmpassword {
+
+    width:100%;
+
 }
 
-#last {
-    position: relative;
-    margin-bottom: 5px;
-    margin-top: 5px;
+#form-title{
+
+    text-align:center;
+
 }
 
-#email {
-    position: relative;
-    margin-bottom: 5px;
-    margin-top: 5px;
+#form-holder{
+
+    width:auto;
+
 }
 
 #ask{
 
     font-family:'Old English Text MT';
-    font-size-adjust:1;
     color:#000000;
     font-size:xx-large;
     text-align:center;
@@ -58,14 +56,14 @@ body{
 
 #notify {
     font-family:'Old English Text MT';
-    font-size-adjust: 1;
     color: #000000;
     font-size: large;
     text-align: center;
 }
 
 #register-btn{
-
+font-family:'Old English Text MT';
+    font-size:x-large;
     position:relative;
     margin-top:5px;
     
@@ -79,7 +77,7 @@ svg{
 
 }
 #buttonholder{
-
+    
    text-align:center;
 
 }
@@ -87,23 +85,18 @@ img {
     height:25%;
     width:35%;
 }
-.error{
 
-    display:block;
-    text-align:center;
-    margin:25%;
-    margin-top:0;
 
-}
-
-#successdiv{
-    text-align:center;
-
-}
 
 
 li{
     display:inline;
     font-family:'Old English Text MT';
     font-size:large;
+}
+
+#login{
+
+    
+
 }

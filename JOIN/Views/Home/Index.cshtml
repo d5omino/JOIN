@@ -1,19 +1,22 @@
-﻿@model JOIN.Models.Registration;
+﻿@model RegisterViewModel
 @{
-
+    ViewData["Title"] = "index";
 }
 
-<div id="ask">Want to join us when we're ready?</div>
+<div id="ask"><h2>Want to join us when we're up and running?</h2> </div>
+<div id="notify"><h4>Sign-Up below and we'll shoot you and email when we're up!</h4> </div>
 
-<div id="emailform">
-    @using (Html.BeginForm("Index", "Registrations", FormMethod.Post))
-    {
-        @Html.TextBoxFor(m => m.ValidEmail, new { placeholder = "Enter e-mail address here!", name = "ValidEmail", @class = "form-control" })
-        <div id="buttonholder"><input type="submit" value="Register" id="register-btn" /></div>
-        <span asp-validation-for="ValidEmail"></span>
-    }
+<div class="jumbotron">
+    <form asp-controller="Account" asp-action="Register" method="post">
+        <input asp-for="Email" class="form-control" placeholder="Email Address" /> <span asp-validation-for="Email"></span>
+        <br />
+        <input asp-for="Password" class="form-control" placeholder="Password" /><span asp-validation-for="Password"></span>
+        <br />
+        <input asp-for="ConfirmPassword" class="form-control" placeholder="Confirm Password" /><span asp-validation-for="ConfirmPassword"></span>
+        <br />
+        <div id="buttonholder"> <input type="submit" name="Register" value="Register" id="register-btn" /></div>
+
+
+    </form>
 </div>
-
-<div id="notify">Sign up and we'll let you know!</div>
-
 

@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
+﻿using JOIN.Models;
+using JOIN.Models.AccountViewModels;
+using JOIN.Services;
+
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using JOIN.Models;
-using JOIN.Models.AccountViewModels;
-using JOIN.Services;
+
+using System;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace JOIN.Controllers
 {
@@ -203,6 +201,10 @@ namespace JOIN.Controllers
         {
             return View();
         }
+
+
+
+
 
         [HttpGet]
         [AllowAnonymous]

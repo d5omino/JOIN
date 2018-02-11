@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using JOIN.Models;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace JOIN.Controllers
 {
@@ -12,7 +6,7 @@ namespace JOIN.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return Redirect("/account/register");
         }
 
 

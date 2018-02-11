@@ -1,6 +1,4 @@
-﻿using System;
-
-using JOIN.Data;
+﻿using JOIN.Data;
 using JOIN.Models;
 using JOIN.Services;
 
@@ -10,6 +8,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+
+using System;
 
 namespace JOIN
 {
@@ -36,36 +36,34 @@ namespace JOIN
             ProdDbString = Environment.GetEnvironmentVariable("ProdDbString");
             DevDbString = Configuration["DevDbString"];
 
-            if(Stage == EnvironmentName.Development)
+            if (Stage == EnvironmentName.Development)
             {
                 services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(DevDbString));
-                services.AddDbContext<JoinDbContext>(options =>
-                options.UseSqlServer(DevDbString));
+
 
             }
             else
             {
                 services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(ProdDbString));
-                services.AddDbContext<JoinDbContext>(options =>
-                options.UseSqlServer(ProdDbString));
+
             }
 
-            services.AddIdentity<ApplicationUser,IdentityRole>()
+            services.AddIdentity<ApplicationUser, IdentityRole>()
             .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
 
             // Add application services.
-            services.AddTransient<IEmailSender,EmailSender>();
+            services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app,IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if(env.IsDevelopment())
+            if (env.IsDevelopment())
             {
                 app.UseBrowserLink();
                 app.UseDeveloperExceptionPage();
