@@ -4,7 +4,6 @@
 * {
     box-sizing: border-box;
 }
-
 html{
    
     height:100vh;
@@ -12,12 +11,10 @@ html{
     
 
 }
-
 body{
     background-color:transparent; 
     min-height:inherit;
 }
-
 #logo{
 
     
@@ -25,25 +22,16 @@ body{
     position:center;
 
 }
-
 #password, #email, #confirmpassword {
 
     width:100%;
 
 }
-
-#form-title{
-
-    text-align:center;
-
-}
-
 #form-holder{
 
     width:auto;
 
 }
-
 #ask{
 
     font-family:'Old English Text MT';
@@ -53,14 +41,12 @@ body{
 
 
 }
-
 #notify {
     font-family:'Old English Text MT';
     color: #000000;
     font-size: large;
     text-align: center;
 }
-
 #register-btn{
 font-family:'Old English Text MT';
     font-size:x-large;
@@ -85,16 +71,11 @@ img {
     height:25%;
     width:35%;
 }
-
-
-
-
 li{
     display:inline;
     font-family:'Old English Text MT';
     font-size:large;
 }
-
 #login{
 
     
