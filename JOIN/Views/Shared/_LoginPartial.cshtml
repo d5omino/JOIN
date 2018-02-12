@@ -7,16 +7,10 @@
 @if (SignInManager.IsSignedIn(User))
 {
     <ul>
-        <li>You are:<a asp-action="Index" asp-controller="Manage">@UserManager.GetUserName(User)</a> </li>
-        <li>
-            <form asp-action="Logout" asp-controller="Account">
-                <button type="submit">Logout</button>
-            </form>
-        </li>
+        <li>You are:<a asp-action="Index" asp-controller="Manage">@UserManager.GetUserName(User)</a></li>
+        <li><form asp-action="Logout" asp-controller="Account"><button type="submit">Logout</button></form></li>
+
     </ul>
-
-
-
 }
 else
 {
@@ -25,3 +19,7 @@ else
         <li><a asp-area="" asp-controller="Account" asp-action="Login">Log in</a></li>
     </ul>
 }
+
+
+
+

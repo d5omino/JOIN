@@ -12,10 +12,12 @@ namespace JOIN.Models
         public string Name { get; set; }
         [Required]
         public string Url { get; set; }
-        [StringLength(50)]
+        [StringLength(250)]
         public string Description { get; set; }
 
         public Blogs(string url) => Url = url;
+
+
         public Blogs()
         {
 

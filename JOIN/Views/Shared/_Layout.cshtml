@@ -17,108 +17,115 @@
     </environment>
 </head>
 <body>
-    <div id="login">@await Html.PartialAsync("_LoginPartial")</div>
-    <div class="container-fluid" id="maindiv">
+    <div id="login">@await Html.PartialAsync("_LoginPartial") </div>
+    @if (Context.Request.Path != "/Account/Register")
+    {
+        <div id="homebutton"><a asp-controller="Account" asp-action="Register">Home</a></div>
+    }
 
+
+    <div class="container-fluid" id="maindiv">
         <div class="row">
             <div class="col-lg-12" id="column">
-                <a id="logo" href="@Url.Action("Index","home")">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="708.38" height="484.04" viewBox="0 0 708.38 484.04">
-                        <defs>
-                            <style>
-                                .a {
-                                    fill: #d40005;
-                                }
+                <div class="container">
+                    <a id="logo" href="@Url.Action("Index","home")">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 708.38 484.04">
+                            <defs>
+                                <style>
+                                    .a {
+                                        fill: #d40005;
+                                    }
 
-                                .a, .h, .i {
-                                    stroke: #000;
-                                }
+                                    .a, .h, .i {
+                                        stroke: #000;
+                                    }
 
-                                .a, .b, .c, .d, .h, .i {
-                                    stroke-miterlimit: 10;
-                                }
+                                    .a, .b, .c, .d, .h, .i {
+                                        stroke-miterlimit: 10;
+                                    }
 
-                                .a, .b {
-                                    stroke-width: 2px;
-                                }
+                                    .a, .b {
+                                        stroke-width: 2px;
+                                    }
 
-                                .b, .c, .d {
-                                    stroke: #d40005;
-                                }
+                                    .b, .c, .d {
+                                        stroke: #d40005;
+                                    }
 
-                                .c, .f, .g {
-                                    fill: none;
-                                }
+                                    .c, .f, .g {
+                                        fill: none;
+                                    }
 
-                                .c {
-                                    stroke-width: 12.2px;
-                                }
+                                    .c {
+                                        stroke-width: 12.2px;
+                                    }
 
-                                .d {
-                                    fill: #ed1c24;
-                                    stroke-width: 8px;
-                                }
+                                    .d {
+                                        fill: #ed1c24;
+                                        stroke-width: 8px;
+                                    }
 
-                                .e, .f {
-                                    font-size: 120px;
-                                    font-family: OldEnglishTextMT, Old English Text MT;
-                                }
+                                    .e, .f {
+                                        font-size: 120px;
+                                        font-family: OldEnglishTextMT, Old English Text MT;
+                                    }
 
-                                .f {
-                                    stroke: #ed1c24;
-                                }
+                                    .f {
+                                        stroke: #ed1c24;
+                                    }
 
-                                .h {
-                                    fill: #fff;
-                                }
-                            </style>
-                        </defs>
-                        <title>Artboard 1</title>
-                        <g>
-                            <path class="a" d="M17.3,53.39c2.93,43.67,13.54,62.25,23.29,71,0,0,28,25.06,33,31.09,1.78,2.16,3.28,3.44,6,6.29A16.12,16.12,0,0,0,88,166.41l-38.56,54.2c-2.45-6.89-6.34-17.23-11.72-29.53C26.91,166.45,18.29,152.7,14.45,144.9,6.26,128.24,1.14,100.66,17.3,53.39Z" />
-                            <path class="a" d="M364.74,22.81c-3.52,43.61-14.39,62.05-24.25,70.64,0,0-28.35,24.68-33.4,30.64-1.81,2.13-3.33,3.39-6.06,6.21a16.22,16.22,0,0,1-8.5,4.55l37.81,54.72c2.56-6.86,6.58-17.14,12.13-29.37,11.12-24.48,19.93-38.11,23.88-45.86C374.76,97.8,380.25,70.28,364.74,22.81Z" />
-                        </g>
-                        <g>
-                            <text></text>
-                            <path class="b" d="M177.75,116.59l4.14,8.09q-41.29,15.06-65.41,37.94a143.83,143.83,0,0,0-41.41,70.66q-12.54,50,9.72,100.61,17.13-8,22-15.25T120.5,275.9l26.64-106.08,122.7-59q31.92,22.87,51.21,32.12T367.73,159l5.44,1.36L374.9,170l-48.43,27.49q-38.27-14.15-81.54-51.19l-65.55,271,8.92,2.49q34,8.55,64.91,3.91t67.47-23.27l5.21,8.95c-19.76,16.55-37.86,28.51-54.8,36.19s-36.21,12.37-57.79,14.09a189.53,189.53,0,0,1-61.73-4.79,173.31,173.31,0,0,1-76.75-41.68q-33.19-30.74-45.1-75.51t-1.45-86.45q12.92-51.39,54.66-87.47Q115.68,135.49,177.75,116.59Zm56.71,25.3-33.74,17.05L173.58,267q-5.07,20.14-8.87,26.25-4.58,8.16-15.63,16-22.4,15.8-60,33.81,13.69,25.83,32.59,42.51t47.12,27.8Z" />
-                        </g>
-                        <path class="c" d="M322.89,405.38c70.77-56.53,121.16-31.18,153,0,14.24,13.94,18,18.57,38,29,41.11,21.47,111,27.11,137-12,19.55-29.42,4.68-69.73,1-79" />
-                        <polygon class="d" points="637.52 297.18 626.16 354.56 681.54 335.71 637.52 297.18" />
-                        <g>
+                                    .h {
+                                        fill: #fff;
+                                    }
+                                </style>
+                            </defs>
+                            <title>Artboard 1</title>
                             <g>
-                                <text class="e" transform="matrix(1.06, -0.1, 0.09, 1, 256.07, 349.69)">u</text>
-                                <text class="e" transform="translate(319.54 344.26) rotate(-1.91) scale(1.06 1)">c</text>
-                                <text class="e" transform="matrix(1.06, 0.02, -0.02, 1, 360.79, 342.58)">k</text>
-                                <text class="e" transform="matrix(1.06, 0.08, -0.07, 1, 422.08, 344.23)">l</text>
-                                <text class="e" transform="matrix(1.05, 0.12, -0.11, 0.99, 456.96, 346.78)">i</text>
-                                <text class="e" transform="matrix(1.05, 0.17, -0.16, 0.99, 491.48, 350.33)">s</text>
-                                <text class="e" transform="translate(547.27 359.6) rotate(12.02) scale(1.06 1)">t</text>
-                                <text class="f" transform="matrix(1.06, -0.1, 0.09, 1, 256.07, 349.69)">u</text>
-                                <text class="f" transform="translate(319.54 344.26) rotate(-1.91) scale(1.06 1)">c</text>
-                                <text class="f" transform="matrix(1.06, 0.02, -0.02, 1, 360.79, 342.58)">k</text>
-                                <text class="f" transform="matrix(1.06, 0.08, -0.07, 1, 422.08, 344.23)">l</text>
-                                <text class="f" transform="matrix(1.05, 0.12, -0.11, 0.99, 456.96, 346.78)">i</text>
-                                <text class="f" transform="matrix(1.05, 0.17, -0.16, 0.99, 491.48, 350.33)">s</text>
-                                <text class="f" transform="translate(547.27 359.6) rotate(12.02) scale(1.06 1)">t</text>
+                                <path class="a" d="M17.3,53.39c2.93,43.67,13.54,62.25,23.29,71,0,0,28,25.06,33,31.09,1.78,2.16,3.28,3.44,6,6.29A16.12,16.12,0,0,0,88,166.41l-38.56,54.2c-2.45-6.89-6.34-17.23-11.72-29.53C26.91,166.45,18.29,152.7,14.45,144.9,6.26,128.24,1.14,100.66,17.3,53.39Z" />
+                                <path class="a" d="M364.74,22.81c-3.52,43.61-14.39,62.05-24.25,70.64,0,0-28.35,24.68-33.4,30.64-1.81,2.13-3.33,3.39-6.06,6.21a16.22,16.22,0,0,1-8.5,4.55l37.81,54.72c2.56-6.86,6.58-17.14,12.13-29.37,11.12-24.48,19.93-38.11,23.88-45.86C374.76,97.8,380.25,70.28,364.74,22.81Z" />
                             </g>
-                            <line class="g" x1="320.89" y1="70.38" x2="391.6" y2="-0.33" />
                             <g>
-                                <rect class="h" x="538.89" y="196.38" width="151" height="71" rx="12" ry="12" transform="translate(-41.95 210.4) rotate(-18.8)" />
+                                <text></text>
+                                <path class="b" d="M177.75,116.59l4.14,8.09q-41.29,15.06-65.41,37.94a143.83,143.83,0,0,0-41.41,70.66q-12.54,50,9.72,100.61,17.13-8,22-15.25T120.5,275.9l26.64-106.08,122.7-59q31.92,22.87,51.21,32.12T367.73,159l5.44,1.36L374.9,170l-48.43,27.49q-38.27-14.15-81.54-51.19l-65.55,271,8.92,2.49q34,8.55,64.91,3.91t67.47-23.27l5.21,8.95c-19.76,16.55-37.86,28.51-54.8,36.19s-36.21,12.37-57.79,14.09a189.53,189.53,0,0,1-61.73-4.79,173.31,173.31,0,0,1-76.75-41.68q-33.19-30.74-45.1-75.51t-1.45-86.45q12.92-51.39,54.66-87.47Q115.68,135.49,177.75,116.59Zm56.71,25.3-33.74,17.05L173.58,267q-5.07,20.14-8.87,26.25-4.58,8.16-15.63,16-22.4,15.8-60,33.81,13.69,25.83,32.59,42.51t47.12,27.8Z" />
+                            </g>
+                            <path class="c" d="M322.89,405.38c70.77-56.53,121.16-31.18,153,0,14.24,13.94,18,18.57,38,29,41.11,21.47,111,27.11,137-12,19.55-29.42,4.68-69.73,1-79" />
+                            <polygon class="d" points="637.52 297.18 626.16 354.56 681.54 335.71 637.52 297.18" />
+                            <g>
                                 <g>
-                                    <circle cx="560.9" cy="231.17" r="3" />
-                                    <circle cx="564.33" cy="241.62" r="3" />
-                                    <circle cx="567.76" cy="252.08" r="3" />
-                                    <circle cx="571.19" cy="262.53" r="3" />
-                                    <line class="i" x1="567.93" y1="228.86" x2="661.04" y2="198.3" />
-                                    <line class="i" x1="571.36" y1="239.32" x2="664.47" y2="208.75" />
-                                    <line class="i" x1="574.79" y1="249.77" x2="667.9" y2="219.2" />
-                                    <line class="i" x1="578.23" y1="260.22" x2="671.34" y2="229.65" />
+                                    <text class="e" transform="matrix(1.06, -0.1, 0.09, 1, 256.07, 349.69)">u</text>
+                                    <text class="e" transform="translate(319.54 344.26) rotate(-1.91) scale(1.06 1)">c</text>
+                                    <text class="e" transform="matrix(1.06, 0.02, -0.02, 1, 360.79, 342.58)">k</text>
+                                    <text class="e" transform="matrix(1.06, 0.08, -0.07, 1, 422.08, 344.23)">l</text>
+                                    <text class="e" transform="matrix(1.05, 0.12, -0.11, 0.99, 456.96, 346.78)">i</text>
+                                    <text class="e" transform="matrix(1.05, 0.17, -0.16, 0.99, 491.48, 350.33)">s</text>
+                                    <text class="e" transform="translate(547.27 359.6) rotate(12.02) scale(1.06 1)">t</text>
+                                    <text class="f" transform="matrix(1.06, -0.1, 0.09, 1, 256.07, 349.69)">u</text>
+                                    <text class="f" transform="translate(319.54 344.26) rotate(-1.91) scale(1.06 1)">c</text>
+                                    <text class="f" transform="matrix(1.06, 0.02, -0.02, 1, 360.79, 342.58)">k</text>
+                                    <text class="f" transform="matrix(1.06, 0.08, -0.07, 1, 422.08, 344.23)">l</text>
+                                    <text class="f" transform="matrix(1.05, 0.12, -0.11, 0.99, 456.96, 346.78)">i</text>
+                                    <text class="f" transform="matrix(1.05, 0.17, -0.16, 0.99, 491.48, 350.33)">s</text>
+                                    <text class="f" transform="translate(547.27 359.6) rotate(12.02) scale(1.06 1)">t</text>
+                                </g>
+                                <line class="g" x1="320.89" y1="70.38" x2="391.6" y2="-0.33" />
+                                <g>
+                                    <rect class="h" x="538.89" y="196.38" width="151" height="71" rx="12" ry="12" transform="translate(-41.95 210.4) rotate(-18.8)" />
+                                    <g>
+                                        <circle cx="560.9" cy="231.17" r="3" />
+                                        <circle cx="564.33" cy="241.62" r="3" />
+                                        <circle cx="567.76" cy="252.08" r="3" />
+                                        <circle cx="571.19" cy="262.53" r="3" />
+                                        <line class="i" x1="567.93" y1="228.86" x2="661.04" y2="198.3" />
+                                        <line class="i" x1="571.36" y1="239.32" x2="664.47" y2="208.75" />
+                                        <line class="i" x1="574.79" y1="249.77" x2="667.9" y2="219.2" />
+                                        <line class="i" x1="578.23" y1="260.22" x2="671.34" y2="229.65" />
+                                    </g>
                                 </g>
                             </g>
-                        </g>
-                    </svg>
+                        </svg>
 
-                </a>
+                    </a>
+                </div>
                 @RenderBody()
             </div>
         </div>
