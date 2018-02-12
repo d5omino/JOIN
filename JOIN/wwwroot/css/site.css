@@ -1,108 +1,13 @@
 ﻿
 
-
-* {
-    box-sizing: border-box;
-}
-html{
-   
-    height:100vh;
-    
-    
-
-}
-body{
-    background-color:transparent; 
-    min-height:inherit;
-}
-#logo{
-
-    
-    height:55vh;
-    position:center;
-
-}
-#password, #email, #confirmpassword {
-
-    width:100%;
-
-}
-#form-holder{
-
-    width:auto;
-
-}
-#ask{
-
-    font-family:'Old English Text MT';
-    color:#000000;
-    font-size:xx-large;
-    text-align:center;
-
-
-}
-#notify {
-    font-family:'Old English Text MT';
-    color: #000000;
-    font-size: x-large;
-    text-align: center;
-}
-#register-btn{
-font-family:'Old English Text MT';
-    font-size:x-large;
-    position:relative;
-    margin-top:5px;
-    
-
-}
-svg{
-    display:block;
-    margin:auto;
-    
-
-
-}
-#buttonholder{
-    
-   text-align:center;
-
-}
-img {
-    height:25%;
-    width:35%;
-}
-li{
-    display:inline;
-    font-family:'Old English Text MT';
-    font-size:large;
-}
-#login{
-
-    
-
-}
-p#welcome{
-    text-align:center;
-    font-size:xx-large;
-    font-family:'Old English Text MT';
-
-}
-#links {
-    text-align: center;
-    font-size: large;
-    font-family: 'Old English Text MT';
-}
-#cuckolds{
-    text-align:center;
-    font-family:'Old English Text MT';
-    font-size:50px;
-
-}
-a#homebutton{
-
-    position:relative;
-    text-align:right;
+#logocontainer{
+    width:20%;
+    padding-top:13.666111%;
 
 }
 
+svg#logo{
 
+    top:0;
+    left:0;
+}
